@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Searchbar } from "react-native-paper";
 import { logger } from "../../utils/helper";
-import { StyleSheet } from "react-native";
+import styled from "styled-components/native";
 
-const styles = StyleSheet.create({
-  searchbar: {
-    marginVertical: 10,
-  },
-});
+const AppSearchbar = styled(Searchbar)`
+  margin-top:  ${(props)=>props.theme.space[2]};
+`;
 
 const ReactSearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -16,11 +14,10 @@ const ReactSearchBar = () => {
 
   logger("searchQuery", searchQuery);
   return (
-    <Searchbar
+    <AppSearchbar
       placeholder="Search"
       onChangeText={onChangeSearch}
       value={searchQuery}
-      style={styles.searchbar}
     />
   );
 };
