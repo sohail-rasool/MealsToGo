@@ -4,6 +4,7 @@ import styled from "styled-components/native";
 
 const Title = styled.Text`
   color: ${(props)=>props.theme.colors.ui.primary};
+  font-family: ${(props)=>props.theme.fonts.heading};
 `;
 
 const RestaurantCard = styled(Card)`
