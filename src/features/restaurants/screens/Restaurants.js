@@ -1,15 +1,11 @@
 import React from "react";
 import ReactSearchBar from "../../../components/common/ReactSearchBar";
-import { View, SafeAreaView, StatusBar, FlatList } from "react-native";
+import { View, FlatList } from "react-native";
 import RestaurantCard from "../components/RestaurantsInfoCard";
 import styled from "styled-components/native";
+import Layout from "../components/layout/Layout";
 
-const currentHeight = StatusBar?.currentHeight;
 
-const AppContainer = styled(SafeAreaView)`
-  flex: 1;
-  ${currentHeight && `margin-top: ${currentHeight}px`};
-`;
 const ListView = styled(FlatList)`
   padding: 16px;
 `;
@@ -23,7 +19,7 @@ const ViewSpace = styled(View)`
 const RestaurantsScreen = () => {
 
   return (
-    <AppContainer>
+    <Layout>
       <ReactSearchBar />
       <ListView
         data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }, { name: 5 }]}
@@ -31,7 +27,7 @@ const RestaurantsScreen = () => {
         ItemSeparatorComponent={<ViewSpace />}
       />
       {/* <RestaurantCard /> */}
-    </AppContainer>
+    </Layout>
   );
 };
 
